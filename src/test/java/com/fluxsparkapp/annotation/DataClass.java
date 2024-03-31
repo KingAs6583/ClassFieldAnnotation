@@ -2,6 +2,7 @@ package com.fluxsparkapp.annotation;
 
 import com.fluxsparkapp.sampledataclass.Employee;
 import com.fluxsparkapp.sampledataclass.EmployeeDto;
+import com.fluxsparkapp.sampledataclass.Student;
 
 public class DataClass {
 
@@ -13,5 +14,9 @@ public class DataClass {
     public Employee getEmployee() {
     	Employee employee = new Employee(1,"raj","science","raj@gamil.com");
     	return employee;
+    }
+    
+    public Student getStudent() {
+    	return new Student(2,"raja","science","raj@gamil.com");
     }
 }

@@ -1,3 +1,4 @@
-com\fluxsparkapp\annotation\MapToClass.class
-com\fluxsparkapp\util\Mapper.class
-com\fluxsparkapp\annotation\CopyToSelfClassObject.class
+com/fluxsparkapp/util/ClassMapper.class
+com/fluxsparkapp/annotation/MapToClasses.class
+com/fluxsparkapp/annotation/CopyToSelfClassObject.class
+com/fluxsparkapp/annotation/MapToClass.class

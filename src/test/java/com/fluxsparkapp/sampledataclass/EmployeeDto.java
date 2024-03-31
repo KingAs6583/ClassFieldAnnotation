@@ -1,8 +1,10 @@
 package com.fluxsparkapp.sampledataclass;
 
 import com.fluxsparkapp.annotation.MapToClass;
+import com.fluxsparkapp.annotation.MapToClasses;
 
 @MapToClass(targetClass = Employee.class)
+@MapToClasses(targetClasses = {EmployeeDto.class,Employee.class})
 public class EmployeeDto {
 	
 	private long id;

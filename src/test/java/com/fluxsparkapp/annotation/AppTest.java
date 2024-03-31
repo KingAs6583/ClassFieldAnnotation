@@ -1,13 +1,12 @@
 package com.fluxsparkapp.annotation;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 import com.fluxsparkapp.sampledataclass.Employee;
 import com.fluxsparkapp.sampledataclass.EmployeeDto;
-import com.fluxsparkapp.util.Mapper;
+import com.fluxsparkapp.util.ClassMapper;
 
 /**
  * Unit test for simple App.
@@ -24,6 +23,7 @@ public class AppTest
     public void shouldAnswerWithTrue()
     {
         assertTrue( true );
+		System.out.println("Test Begin");
     }
     
     
@@ -32,7 +32,7 @@ public class AppTest
     public void matchEmployeeWithEmployeeDto() {
     	employee = dataClass.getEmployee();
     	try {
-			employeeDto = Mapper.map(employee);
+			employeeDto = ClassMapper.mapFrom(employee);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -43,7 +43,7 @@ public class AppTest
     public void matchEmployeeDtoWithEmployee() {
     	employeeDto = dataClass.getEmployeeDto();
     	try {
-    		employee = Mapper.map(employeeDto);
+    		employee = ClassMapper.mapFrom(employeeDto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,5 +61,26 @@ public class AppTest
     	}
     	
     }
-    
+	
+	@Test
+	public void testCopyFields(){
+		employee = dataClass.getEmployee();
+		try {
+			employeeDto = ClassMapper.copyFields(employee, EmployeeDto.class);
+			assertEquals(employee.getId(), employeeDto.getId());
+		} catch (Exception e) {
+    		e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testClassesFrom(){
+		employeeDto = dataClass.getEmployeeDto();
+		try {
+			employee = ClassMapper.mapClassesFrom(employeeDto, Employee.class);
+			assertEquals(employee.getId(), employeeDto.getId());
+		} catch (Exception e) {
+    		e.printStackTrace();
+		}
+	}
 }

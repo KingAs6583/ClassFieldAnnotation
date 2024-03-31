@@ -1,26 +1,19 @@
 package com.fluxsparkapp.sampledataclass;
 
-import java.lang.reflect.InvocationTargetException;
-
-
-import com.fluxsparkapp.annotation.MapToClass;
 import com.fluxsparkapp.annotation.MapToClasses;
-import com.fluxsparkapp.util.ClassMapper;
 
-@MapToClass(targetClass = EmployeeDto.class)
 @MapToClasses(targetClasses = {EmployeeDto.class,Employee.class})
-public class Employee {
-	
+public class Student {
 	private long id;
 	private String empName;
-	private String jobName;
+	private String jobName1;
 	private String emailId;
-	public Employee( ) {}
-	public Employee(long id, String empName, String jobName, String emailId) {
+	public Student( ) {}
+	public Student(long id, String empName, String jobName, String emailId) {
 		super();
 		this.id = id;
 		this.empName = empName;
-		this.jobName = jobName;
+		this.jobName1 = jobName;
 		this.emailId = emailId;
 	}
 	public long getId() {
@@ -36,10 +29,10 @@ public class Employee {
 		this.empName = empName;
 	}
 	public String getJobName() {
-		return jobName;
+		return jobName1;
 	}
 	public void setJobName(String jobName) {
-		this.jobName = jobName;
+		this.jobName1 = jobName;
 	}
 	public String getEmailId() {
 		return emailId;
@@ -47,9 +40,5 @@ public class Employee {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	
-    public Employee copy(Employee employee) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        return ClassMapper.copyFrom(employee);
-    }
 	
 }
