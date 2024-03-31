@@ -19,7 +19,7 @@ In dependency
 <dependency>
     <groupId>com.github.KingAs6583</groupId>
     <artifactId>ClassFieldAnnotation</artifactId>
-    <version>v2.0.0</version>
+    <version>v1.1.0</version>
 </dependency>
 ```
 ## How to use
